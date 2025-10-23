@@ -1,27 +1,32 @@
 class Solution {
     public static void print_divisors(int n) {
         // code here
-        List<Integer>div=new ArrayList<>();
-        List<Integer>divv=new ArrayList<>();
-        //int d=0;
-        for(int d=1;d*d<=n;d++)
+        
+        ArrayList<Integer>div=new ArrayList<>();
+        ArrayList<Integer>sechalf=new ArrayList<>();
+       
+        for(int i=1;i*i<=n;i++)
         {
-            if(n%d==0)
+            if(n%i==0)
             {
-                div.add(d);
-            
-             if(d!=n/d)
-            {
-                divv.add(n/d);
-            }
+              div.add(i);
+              
+              if(i*i!=n)
+              {
+                  sechalf.add(n/i);
+              }
             }
         }
-        Collections.reverse(divv);
-        div.addAll(divv);
-        
         for(int i:div)
+        {
+           System.out.print(i+" "); 
+        }
+        
+        Collections.reverse(sechalf);
+        for(int i:sechalf)
         {
             System.out.print(i+" ");
         }
     }
-}
+    }
+
