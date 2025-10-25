@@ -1,19 +1,20 @@
 class Solution {
     public static int[] lcmAndGcd(int a, int b) {
         // code here
-        int x=a;
-        int y=b;
+        int tem=a;
+        int te=b;
+        int[]lg=new int[2];
         while(b!=0)
         {
             int temp=b;
             b=a%b;
             a=temp;
         }
-        int gcd=a;
         
-        int lcm=Math.abs(x/gcd*y);
-        
-        return new int[]{lcm,gcd};
+        int lcm=(tem*te)/a;
+        lg[0]=lcm;
+        lg[1]=a;
+        return lg;
     }
     
 }
